@@ -5,18 +5,19 @@ import schedule
 import threading
 import time
 import asyncio
+import os
 
-import propaganda
+from propaganda import random_propaganda
 
-# CHANNEL_22H22 = 407644352236748812 # Test bots
-CHANNEL_22H22 = 648637884555067428 # Salon 22h22
-HOUR_22H22 = "22:22"
+PROPAGANDA_CHANNEL_ID = int(os.environ["PROPAGANDA_CHANNEL_ID"])
+TOKEN = os.environ["TOKEN"]
+PROPAGANDA_NEWS_REPORT_HOUR = os.environ["PROPAGANDA_NEWS_REPORT_HOUR"]
 LOOP = None
 
 def do_propaganda():
     co = asyncio.run_coroutine_threadsafe(
-            client.get_channel(CHANNEL_22H22) \
-                .send(propaganda.random_propaganda()),
+            client.get_channel(PROPAGANDA_CHANNEL_ID) \
+                .send(random_propaganda()),
             LOOP)
     co.result()
 
@@ -29,14 +30,12 @@ class PropagandaDispenser(threading.Thread):
 class VoxPopuli(discord.Client):
     async def on_ready(self):
         print('Logged on as', self.user)
-        schedule.every().day.at(HOUR_22H22).do(do_propaganda)
+        schedule.every().day.at(PROPAGANDA_NEWS_REPORT_HOUR).do(do_propaganda)
 
 if __name__ == "__main__":
-    with open("./token", "r") as token_file:
-        token = token_file.readline().replace("\n", "")
-        LOOP = asyncio.new_event_loop()
-        asyncio.set_event_loop(LOOP)
-        client = VoxPopuli()
-        propagandaThread = PropagandaDispenser()
-        propagandaThread.start()
-        client.run(token)
+    LOOP = asyncio.new_event_loop()
+    asyncio.set_event_loop(LOOP)
+    client = VoxPopuli()
+    propagandaThread = PropagandaDispenser()
+    propagandaThread.start()
+    client.run(TOKEN)
