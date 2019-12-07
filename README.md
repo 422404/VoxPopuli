@@ -13,3 +13,6 @@ Configure the bot through environment variables.
 # Installation
 
 Build a docker image or push it to heroku !
+
+If using Heroku, don't forget to set your timezone!
+> Ex: heroku config:add TZ="America/Los_Angeles"
