@@ -27,3 +27,7 @@ Merci au peuple d'exister.
 Bonne journée peuple cher.
 À demain.
 """
+
+async def speak_as_the_people(client, message, trimmed):
+    await message.delete()
+    await message.channel.send(trimmed)
