@@ -10,6 +10,7 @@ Configure the bot through environment variables.
 | PROPAGANDA_CHANNEL_ID                 | The ID of the channel where to output propaganda            |
 | PROPAGANDA_NEWS_REPORT_HOUR           | The hour of the news report                                 |
 | PROPAGANDA_MAKERS                     | Blank separated IDs of the ones able to speak as Vox Populi |
+| PROPAGANDA_NEWS_REPORT_OVERRIDE       | Optionnal. Name of the text that will override news reports |
 
 # Installation
 

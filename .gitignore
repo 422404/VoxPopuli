@@ -1,3 +1,4 @@
 app/token
 app/channels
 app/__pycache__
+env
