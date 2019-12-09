@@ -47,6 +47,24 @@ Aujourd'hui {date} tout est optimal.
 À demain peuple adoré.
 """
 
+RESISTANCE_DESTABILISATION2="""\
+```fix
+Vox Populi - La parole du peuple
+```
+Aujourd'hui {date} notre pays est resplendissant !
+
+```diff
++ Doux peuple adoré,
++ Ne te laisse pas détourner,
++ Du droit chemin doré,
+- Par l'opposition dissidante,
+- Contre la douce saveur enivrante,
+- De notre adorée Présidente.
+```
+
+À demain peuple aimé.
+"""
+
 THANKS_FROM_PRESIDENT="""\
 ```fix
 Vox Populi - La parole du peuple
@@ -55,7 +73,7 @@ Aujourd'hui {date} notre adorée Présidente nous accorde quelques paroles !
 
 "Bonjour mes chers frères et soeurs, vous faites du bon boulot ! Votre travail paie !"
 
-Merci adorée Présidente pour ces mots réconfortants !
+Merci adorée Présidente pour ces mots motivants !
 
 À demain peuple adoré.
 """
@@ -86,7 +104,7 @@ Reposez-vous maintenant, prochains diplômés.
 À demain peuple adoré.
 """
 
-ALL_NEWS_REPORT = [BASIC_NEWS_REPORT, RESISTANCE_DESTABILISATION, THANKS_FROM_PRESIDENT]
+ALL_NEWS_REPORT = [BASIC_NEWS_REPORT, RESISTANCE_DESTABILISATION, THANKS_FROM_PRESIDENT, RESISTANCE_DESTABILISATION2]
 
 def get_random_news_report():
     return ALL_NEWS_REPORT[randrange(len(ALL_NEWS_REPORT))]
