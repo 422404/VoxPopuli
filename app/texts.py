@@ -56,7 +56,7 @@ Aujourd'hui {date} notre pays est resplendissant !
 ```diff
 + Doux peuple adoré,
 + Ne te laisse pas détourner,
-+ Du droit chemin doré,
++ Du droit chemin injustement décrié,
 + Par l'opposition dissidante,
 + Contre la douce saveur enivrante,
 + De notre adorée Présidente.
